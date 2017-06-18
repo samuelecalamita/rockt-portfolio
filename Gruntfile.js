@@ -16,7 +16,7 @@ module.exports = function(grunt) {
         // },
         dist: {
           src: ['src/js/vendor/plugin.js','src/js/main.js'],
-          dest: 'dist/js/main.js',
+          dest: 'dist/js/main-combined.js',
         },
       },
 
