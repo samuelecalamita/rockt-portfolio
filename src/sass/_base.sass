@@ -2,3 +2,38 @@ body
   margin: 0
   padding: 0
   font-family: 'Roboto', sans-serif
+  color: $white
+  background: $body-gradient
+  background-repeat: no-repeat
+
+  &.sticky-footer
+    display: flex
+    flex-direction: column
+    min-height: 100vh
+
+    > main
+      flex: 1
+
+.main-container
+  display: flex
+  flex-direction: column
+  justify-content: center
+  align-items: center
+  min-height: calc(100vh - 51px)
+
+  h1
+    flex: 0
+    font-weight: normal
+    font-size: 50px
+    text-align: center
+
+  .contact-container
+    flex: 0
+
+    ul
+      display: flex
+      align-items: center
+
+      li
+        flex: 1 1 auto
+        list-style-type: none
