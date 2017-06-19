@@ -31,6 +31,19 @@ module.exports = function(grunt) {
         }
       },
 
+       postcss: {
+        options: {
+          map: true, // inline sourcemaps
+
+          processors: [
+            require('autoprefixer')({browsers: 'last 2 versions'}) // add vendor prefixes
+          ]
+        },
+        dist: {
+          src: 'dist/css/*.css'
+        }
+      },
+
       pug: {
         compile: {
             options: {
@@ -44,6 +57,20 @@ module.exports = function(grunt) {
                 ext: '.html'
             }]
           }
+        },
+        watch: {
+          css: {
+            files: 'src/sass/**/*.sass',
+            tasks: ['sass']
+          },
+          pug: {
+            files: 'src/pug/**/*.pug',
+            tasks: ['pug']
+          },
+          scripts: {
+            files: 'src/js/**/*.js',
+            tasks: ['concat']
+          }
         }
 
   });
@@ -51,9 +78,14 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.loadNpmTasks('grunt-contrib-concat');
   grunt.loadNpmTasks('grunt-contrib-sass');
+  grunt.loadNpmTasks('grunt-postcss');
   grunt.loadNpmTasks('grunt-contrib-pug');
+  grunt.loadNpmTasks('grunt-contrib-watch');
 
   // Default task(s).
-  grunt.registerTask('default', ['clean','concat','sass','pug']);
+  grunt.registerTask('default', ['clean','concat','sass','postcss','pug']);
+
+   // Development task(s).
+  grunt.registerTask('dev', ['default', 'watch']);
 
 };
