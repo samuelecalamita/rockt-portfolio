@@ -10,6 +10,15 @@ module.exports = function(grunt) {
           },
       },
 
+      copy: {
+        main: {
+          expand: true,
+          cwd: 'src',
+          src: 'svg/**',
+          dest: 'dist/',
+        },
+      },
+
       concat: {
         // options: {
         //   separator: ';',
@@ -58,6 +67,7 @@ module.exports = function(grunt) {
             }]
           }
         },
+        
         watch: {
           css: {
             files: 'src/sass/**/*.sass',
@@ -76,6 +86,7 @@ module.exports = function(grunt) {
   });
 
   grunt.loadNpmTasks('grunt-contrib-clean');
+  grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-contrib-concat');
   grunt.loadNpmTasks('grunt-contrib-sass');
   grunt.loadNpmTasks('grunt-postcss');
@@ -83,9 +94,9 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-watch');
 
   // Default task(s).
-  grunt.registerTask('default', ['clean','concat','sass','postcss','pug']);
+  grunt.registerTask('default', ['clean','copy','concat','sass','postcss','pug']);
 
-   // Development task(s).
+  // Development task(s).
   grunt.registerTask('dev', ['default', 'watch']);
 
 };
