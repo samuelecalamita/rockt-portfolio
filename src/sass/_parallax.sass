@@ -7,65 +7,101 @@ main
   right: 0
   width: 100vw
   height: 100vh
-  li:first-child,
-  li:nth-child(2)
-    top: 50px !important
-    left: 50px !important
+  margin: 0
+  padding: 0
+  overflow: hidden
 
-  li:nth-child(3),
-  li:nth-child(4)
-    top: 50px !important
-    right: 50px !important
-    left: auto !important
+  li
+    width: 100%
+    height: 100%
 
-  li:nth-child(5),
-  li:nth-child(6)
-    bottom: 50px !important
-    left: 50px !important
+// rectangles positions are defined like clock´s rules:
+// pos-12 => top, pos-3 => right, pos-6  => bottom, and so on...
 
-  li:nth-child(7),
-  li:nth-child(8)
-    bottom: 50px !important
-    right: 50px !important
-    left: auto !important
-    top: auto !important
-
-  li:nth-child(9),
-  li:nth-child(10)
-    bottom: 50px !important
-    left: 50px !important
-    top: auto !important
-
-  li:nth-child(11),
-  li:nth-child(12)
-    bottom: 200px !important
-    right: 200px !important
-    left: auto !important
-    top: auto !important
-
-.circle
+.rectangle
   display: block
+  position: absolute
 
-.circle-big
-  width: 200px
-  height: 200px
-  border-radius: 100px
+  &.pos-12
+    top: -10px
+    right: 50%
 
-.circle-middle
-  width: 150px
-  height: 150px
-  border-radius: 75px
+  &.pos-1
+    top: -10px
+    right: 5%
 
-.circle-small
-  width: 100px
-  height: 100px
-  border-radius: 50px
+  &.pos-2
+    right: -10px
+    top: 20%
 
-.circle-blue
-  background-color: rgba(173, 216, 230, 0.6)
+  &.pos-3
+    top: 50%
+    right: -10px
 
-.circle-orange
-  background-color: rgba(255, 165, 0, 0.6)
+  &.pos-4
+    bottom: 20%
+    right: -10px
 
-.circle-yellow
-  background-color: rgba(255, 255, 0, 0.6)
+  &.pos-5
+    right: 20%
+    bottom: -10px
+
+  &.pos-6
+    bottom: -10px
+    right: 50%
+
+  &.pos-7
+    bottom: -10px
+    left: 20%
+
+  &.pos-8
+    bottom: 20%
+    left: -10px
+
+  &.pos-9
+    left: -10px
+    bottom: 50%
+
+  &.pos-10
+    top: 20%
+    left: -10px
+
+  &.pos-11
+    top: -10px
+    left: 20%
+
+.rectangle-big
+  width: 15vw
+  height: 15vw
+
+.rectangle-middle
+  width: 10vw
+  height: 10vw
+
+.rectangle-small
+  width: 8vw
+  height: 8vw
+
+.rectangle-blue
+  background-color: rgba(59, 135, 247, 0.3)
+
+.rectangle-lila
+  background-color: rgba(255, 0, 68, 0.3)
+
+.rectangle-yellow
+  background-color: rgba(255, 255, 0, 0.3)
+
+@keyframes rotating
+  from
+    transform: rotate(0deg)
+  to
+    transform: rotate(360deg)
+
+.rotating-10s
+  animation: rotating 10s linear infinite
+
+.rotating-15s
+  animation: rotating 20s linear infinite
+
+.rotating-20s
+  animation: rotating 20s linear infinite
