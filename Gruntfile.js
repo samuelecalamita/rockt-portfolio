@@ -24,7 +24,7 @@ module.exports = function(grunt) {
         //   separator: ';',
         // },
         dist: {
-          src: ['src/js/vendor/plugin.js','src/js/main.js'],
+          src: ['src/js/vendor/parallax.js','src/js/main.js'],
           dest: 'dist/js/main-combined.js',
         },
       },
@@ -67,7 +67,7 @@ module.exports = function(grunt) {
             }]
           }
         },
-        
+
         watch: {
           css: {
             files: 'src/sass/**/*.sass',
