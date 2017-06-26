@@ -3,31 +3,11 @@ html(lang='en')
   include include/head
 
   body.sticky-footer
+    include include/header
     main
       include include/scene 
       .main-container
         h1 Hello world! I'm Samuele, Berlin based Italian Frontend Developer!
-        .contact-container
-          ul
-            li  
-              a(href="", title="Go to...")
-                include ../svg/027-linkedin-2.svg
-            li  
-              a(href="", title="Go to...")
-                include ../svg/019-xing-3.svg
-            li    
-              a(href="", title="Go to...") 
-                include ../svg/media.svg
-            li  
-              a(href="", title="Go to...") 
-                include ../svg/development.svg
-            li  
-              a(href="", title="Go to...")
-                //- email
-                include ../svg/006-symbol.svg
-            li  
-              a(href="", title="Go to...") 
-                include ../svg/004-message.svg
                 
     include include/footer
     include include/foot

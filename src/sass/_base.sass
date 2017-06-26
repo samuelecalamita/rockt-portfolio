@@ -5,6 +5,24 @@ body
   color: $text-color
   background: $body-gradient
   background-repeat: no-repeat
+  position: relative
+
+  &:before,
+  &:after
+    content: ''
+    position: absolute
+    top: 0
+    bottom: 0
+    width: 1px
+    height: 100%
+    background-color: $white
+
+  &:before
+    left: 60px
+
+  &:after
+    right: 60px
+
 
   &.sticky-footer
     display: flex
@@ -39,40 +57,13 @@ a
     font-size: 50px
     text-align: center
 
-  .contact-container
-    flex: 0
-
-    ul
-      display: flex
-      align-items: center
-      padding-left: 0
-
-      li
-        flex: 1 1 auto
-        margin: 10px
-
-        a
-          display: block
-
-        svg
-          width: 30px
-          height: 30px
-          fill: $text-color
-
-          #Codepen
-            path,
-            polygon
-              stroke: $text-color !important
-
-          #Github
-            path
-              fill: $text-color !important
-
 .footer-link-container
   display: flex
   justify-content: flex-end
   position: relative
   z-index: 1000
+  height: 60px
+  border-top: 1px solid $white
 
   a
     flex: 0 0 auto
