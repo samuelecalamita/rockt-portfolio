@@ -68,7 +68,21 @@ module.exports = function(grunt) {
           }
         },
 
+        connect: {
+          server: {
+            options: {
+              hostname: 'localhost',
+              port: 80,
+              base: 'dist/',
+              livereload: true
+            }
+          }
+        },
+
         watch: {
+          options: {
+            livereload: true
+          },
           css: {
             files: 'src/sass/**/*.sass',
             tasks: ['sass']
@@ -91,10 +105,11 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-sass');
   grunt.loadNpmTasks('grunt-postcss');
   grunt.loadNpmTasks('grunt-contrib-pug');
+  grunt.loadNpmTasks('grunt-contrib-connect');
   grunt.loadNpmTasks('grunt-contrib-watch');
 
   // Default task(s).
-  grunt.registerTask('default', ['clean','copy','concat','sass','postcss','pug']);
+  grunt.registerTask('default', ['clean','copy','concat','sass','postcss','pug','connect']);
 
   // Development task(s).
   grunt.registerTask('dev', ['default', 'watch']);
