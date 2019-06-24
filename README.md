@@ -5,4 +5,4 @@ A portfolio project with Grunt Pug and Sass
 
 - Install dependencies `npm install` 
 - Run develpment task `grunt dev`
-- Tun build task `grunt`
+- Run build task `grunt`
